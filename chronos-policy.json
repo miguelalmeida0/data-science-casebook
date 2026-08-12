@@ -1,0 +1,11 @@
+{
+  "schema": "chronos.policy.v1",
+  "policy_id": "chronos-ext011-train-only-imputation",
+  "coverage_mode": "COMPLETE",
+  "supported_paths": [
+    "cases/case_1_regression/lessons/05_train_test_split_and_first_model/solution.py"
+  ],
+  "rule_ids": ["CHRONOS-FOLD-LOCAL-IMPUTE-001"],
+  "required_check": "Chronos custom App check (externally blocked)",
+  "actions_fallback_check": "recurrence guard (Actions fallback)"
+}
