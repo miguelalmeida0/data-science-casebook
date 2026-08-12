@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main, chronos/base-ext011-exact]
+    branches: [main, chronos/base-ext011-exact-v2]
 
 jobs:
   test:

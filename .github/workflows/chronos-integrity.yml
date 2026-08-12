@@ -2,7 +2,7 @@ name: Chronos integrity (Actions fallback)
 
 on:
   pull_request:
-    branches: [chronos/base-ext011-exact]
+    branches: [chronos/base-ext011-exact-v2]
 
 permissions:
   contents: read
