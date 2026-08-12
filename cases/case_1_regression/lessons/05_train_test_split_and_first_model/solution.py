@@ -13,15 +13,22 @@ RANDOM_STATE = 20260707
 FEATURE_COLUMNS = ["distance_km", "num_stops", "driver_experience_years", "vehicle_age_years"]
 
 
-def load_clean_shipments(path: Path = DATA_PATH) -> pd.DataFrame:
+def load_shipments(path: Path = DATA_PATH) -> pd.DataFrame:
     df = pd.read_csv(path)
-    df = df.dropna(subset=["weather"])
-    median_experience = df["driver_experience_years"].median()
-    return df.fillna({"driver_experience_years": median_experience})
+    return df.dropna(subset=["weather"])
 
 
 def split_shipments(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     train_df, test_df = train_test_split(df, test_size=0.2, random_state=RANDOM_STATE)
+    return train_df, test_df
+
+
+def impute_driver_experience(
+    train_df: pd.DataFrame, test_df: pd.DataFrame
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    median_experience = train_df["driver_experience_years"].median()
+    train_df = train_df.fillna({"driver_experience_years": median_experience})
+    test_df = test_df.fillna({"driver_experience_years": median_experience})
     return train_df, test_df
 
 
