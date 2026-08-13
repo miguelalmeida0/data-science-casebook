@@ -1,0 +1,1 @@
+name: Chronos infrastructure failure control\n\non:\n  workflow_dispatch:\n\njobs:\n  unavailable-container:\n    runs-on: ubuntu-latest\n    container:\n      image: ghcr.io/miguelalmeida0/chronos-retirement-infra-control:missing-20260813\n    steps:\n      - name: Must not execute\n        run: echo container-initialization-unexpectedly-succeeded\n
