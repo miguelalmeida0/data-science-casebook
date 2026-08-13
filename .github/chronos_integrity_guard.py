@@ -7,7 +7,6 @@ import ast
 import json
 from pathlib import Path
 
-
 SOURCE = Path(
     "cases/case_1_regression/lessons/05_train_test_split_and_first_model/solution.py"
 )
